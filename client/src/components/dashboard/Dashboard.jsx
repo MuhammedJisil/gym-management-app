@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback} from 'react';
 import { useStats } from '../../hooks/useStats';
 import StatsCards from './StatsCards';
 import ExpiringMembersAlert from './ExpiringMembersAlert';
@@ -11,7 +11,7 @@ const Dashboard = () => {
     refreshData();
   }, []);
 
-  const handleCardClick = (cardType) => {
+  const handleCardClick = useCallback((cardType) => {
     switch (cardType) {
       case 'total':
         // Navigate to members page with all filter
@@ -43,7 +43,7 @@ const Dashboard = () => {
       default:
         break;
     }
-  };
+ }, []);
 
   if (loading) {
     return (

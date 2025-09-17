@@ -44,8 +44,8 @@ export const useStats = () => {
   };
 
   const refreshData = async () => {
-    await Promise.all([fetchStats(), fetchExpiringMembers()]);
-  };
+  await Promise.all([fetchStats(), fetchExpiringMembers()]);
+};
 
   return {
     stats,

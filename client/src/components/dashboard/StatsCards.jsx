@@ -1,7 +1,7 @@
 import React from 'react';
 import { Users, DollarSign, AlertTriangle, Calendar } from 'lucide-react';
 
-const StatsCards = ({ stats, onCardClick }) => {
+const StatsCards = React.memo(({ stats, onCardClick }) => {
   const cards = [
     {
       id: 'total',
@@ -61,6 +61,6 @@ const StatsCards = ({ stats, onCardClick }) => {
       })}
     </div>
   );
-};
+});
 
 export default StatsCards;
